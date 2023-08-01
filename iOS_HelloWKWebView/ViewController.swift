@@ -8,14 +8,27 @@
 import UIKit
 import WebKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, WKNavigationDelegate {
 
     @IBOutlet weak var myWebview: WKWebView!
     
+    @IBOutlet weak var myActivityIndicator: UIActivityIndicatorView!
+    
+    // 網頁載入完成之前
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        myActivityIndicator.startAnimating()
+    }
+    
+    // 網頁載入完成之後
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        myActivityIndicator.stopAnimating()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        myWebview.navigationDelegate = self
         
         let strURL = "https://www.apple.com/tw/"
         let strURL2 = "http://www.bild.de/" // https 去掉s
