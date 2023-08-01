@@ -24,17 +24,27 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="VKT-31-hk0">
+                                <rect key="frame" x="186.66666666666666" y="416" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="KMP-pp-Xcn"/>
+                                    <constraint firstAttribute="width" constant="20" id="ojH-1o-P8N"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="WQk-Q9-GmQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="7ZJ-MU-Fm1"/>
+                            <constraint firstItem="VKT-31-hk0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Nxu-Yj-2fX"/>
                             <constraint firstItem="WQk-Q9-GmQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZpV-dI-VRk"/>
                             <constraint firstItem="WQk-Q9-GmQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="biJ-kN-9vV"/>
                             <constraint firstAttribute="bottom" secondItem="WQk-Q9-GmQ" secondAttribute="bottom" id="rDg-7R-mu8"/>
+                            <constraint firstItem="VKT-31-hk0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vdH-Tf-BoZ"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="myActivityIndicator" destination="VKT-31-hk0" id="YXx-Cz-78s"/>
                         <outlet property="myWebview" destination="WQk-Q9-GmQ" id="LPD-B2-k1c"/>
                     </connections>
                 </viewController>
